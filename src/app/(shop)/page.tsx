@@ -1,9 +1,20 @@
-import Image from "next/image";
+import { ProductGrid, Title } from "@/components";
+import { initialData } from "@/seed/seed";
+
+const products = initialData.products;
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      Hello world :D
-    </main>
+    <>
+     <Title 
+      title="Tienda"
+      subtitle="Todo los productos"
+      className="mb-2"
+     />
+
+     <ProductGrid
+      products={products}
+     />
+    </>
   );
 }
