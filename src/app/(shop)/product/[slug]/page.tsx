@@ -1,6 +1,7 @@
 import { initialData } from "@/seed/seed";
 import notFound from "../not-found";
 import { titleFont } from "@/config/fonts";
+import { SizeSelector } from "@/components";
 
 interface Props {
     params: {
@@ -26,6 +27,9 @@ export default function({params}: Props) {
             <div className="col-span-1 px-5">
                 <h1 className={`${titleFont.className} antialiased font-bold text-xl`}>{product?.title}</h1>
                 <p className="text-lg mb-5">{product?.price}</p>
+
+                <SizeSelector selectedSize={product!.sizes[0]} availableSizes={product!.sizes}/>
+                
                 <button className="btn-primary my-5"
                 >
                     Agregar al carrito
